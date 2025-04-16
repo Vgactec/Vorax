@@ -1,0 +1,60 @@
+RAPPORT DE TEST DE L'API KAGGLE POUR ARC PRIZE 2025
+================================================================================
+
+Date: 2025-04-16 15:21:51
+
+RÉSUMÉ
+--------------------------------------------------------------------------------
+Tests réalisés: 8
+Tests réussis: 8
+Tests échoués: 0
+Taux de réussite: 100.0%
+
+TESTS DE LA COMPÉTITION
+--------------------------------------------------------------------------------
+Test: Liste des compétitions ARC
+Commande: kaggle competitions list -s arc
+Résultat: Réussi
+Temps: 0.66 secondes
+
+Test: Fichiers de la compétition ARC Prize 2025
+Commande: kaggle competitions files arc-prize-2025
+Résultat: Réussi
+Temps: 0.95 secondes
+
+Test: Téléchargement du fichier d'exemple de soumission
+Commande: kaggle competitions download arc-prize-2025 -f sample_submission.json -p arc_test
+Résultat: Réussi
+Temps: 1.17 secondes
+
+Test: Liste des soumissions pour ARC Prize 2025
+Commande: kaggle competitions submissions arc-prize-2025
+Résultat: Réussi
+Temps: 0.66 secondes
+
+Test: Classement de la compétition ARC Prize 2025
+Commande: kaggle competitions leaderboard arc-prize-2025 --show
+Résultat: Réussi
+Temps: 0.53 secondes
+
+TESTS DU MODÈLE
+--------------------------------------------------------------------------------
+Test: Liste de mes kernels Kaggle
+Commande: kaggle kernels list --mine
+Résultat: Réussi
+Temps: 0.71 secondes
+
+Test: Statut du modèle HybridVorax
+Commande: kaggle kernels status ndarray2000/hybridvoraxmodelv3-arc-prize-2025-ultra-optimis
+Résultat: Réussi
+Temps: 0.71 secondes
+
+Test: Téléchargement du modèle HybridVorax
+Commande: kaggle kernels pull ndarray2000/hybridvoraxmodelv3-arc-prize-2025-ultra-optimis -p arc_test/model
+Résultat: Réussi
+Temps: 0.98 secondes
+
+RECOMMANDATIONS
+--------------------------------------------------------------------------------
+✅ L'API Kaggle fonctionne parfaitement pour ARC Prize 2025.
+Vous pouvez continuer à utiliser le modèle HybridVorax sans problème.
