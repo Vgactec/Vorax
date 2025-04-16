@@ -1,9 +1,10 @@
+
 {
   "id": "vorax/hybridvoraxmodelv4-arc-prize-2025",
-  "title": "HybridVoraxModel V4 - ARC Prize 2025 (Corrected)", 
-  "code_file": "vorax_repo/arc_model/hybridvoraxmodelv4-arc-prize-2025-corrected.ipynb",
+  "title": "HybridVoraxModel V4 - ARC Prize 2025 (Corrected)",
+  "code_file": "hybridvoraxmodelv4-arc-prize-2025-corrected.ipynb",
   "language": "python",
-  "kernel_type": "notebook", 
+  "kernel_type": "notebook",
   "is_private": false,
   "enable_gpu": true,
   "enable_internet": true,
