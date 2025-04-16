@@ -1,14 +1,14 @@
 
 {
-  "id": "ndarray2000/hybridvoraxmodelv4-arc-prize-2025",
-  "title": "HybridVoraxModel V4 - ARC Prize 2025",
+  "id": "ndarray2000/hybridvoraxmodel-v4-arc-prize-2025",
+  "title": "HybridVoraxModel V4 ARC Prize 2025",
   "code_file": "hybridvoraxmodelv4-arc-prize-2025-corrected.ipynb",
   "language": "python",
   "kernel_type": "notebook",
   "is_private": false,
   "enable_gpu": true,
   "enable_internet": true,
-  "dataset_sources": ["abstraction-and-reasoning-prize"],
+  "dataset_sources": ["kaggle/abstraction-and-reasoning-prize"],
   "competition_sources": ["arc-prize-2025"],
   "keywords": ["deep learning", "optimization", "hybrid model", "v4"]
 }
