@@ -1,0 +1,38 @@
+4.5s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+4.5s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+4.5s 3 0.00s - to python to disable frozen modules.
+4.5s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+5.4s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+5.4s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+5.4s 7 0.00s - to python to disable frozen modules.
+5.4s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.0s 9 Taux de compression obtenu: 75.0%
+11.0s 10 Aucune donnée d'entraînement disponible pour les tests.
+11.0s 11 Aucune donnée de test disponible pour générer une soumission.
+11.1s 12 Points forts du modèle HybridVoraxModelV2:
+11.1s 13 - Détection automatique du type de puzzle
+11.1s 14 - Traitement adaptatif en fonction du type de puzzle
+11.1s 15 - Techniques de compression efficaces pour optimiser les performances
+11.1s 16 - Mécanisme d'attention multi-niveaux pour se concentrer sur les éléments importants
+11.1s 17 
+11.1s 18 Pistes d'amélioration:
+11.1s 19 - Intégration d'apprentissage par renforcement pour améliorer la généralisation
+11.1s 20 - Utilisation de techniques d'augmentation de données spécifiques aux puzzles ARC
+11.1s 21 - Implémentation d'un système de méta-apprentissage pour s'adapter rapidement à de nouveaux types de puzzles
+11.1s 22 - Développement d'un module de raisonnement symbolique pour les puzzles logiques complexes
+11.1s 23 Conclusion:
+11.1s 24 Le modèle HybridVoraxModelV2 représente une approche innovante pour la résolution de puzzles ARC en combinant:
+11.1s 25 - Des techniques d'apprentissage automatique avancées
+11.1s 26 - Des mécanismes adaptatifs spécifiques aux différents types de puzzles
+11.1s 27 - Des optimisations pour améliorer l'efficacité et les performances
+11.1s 28 
+11.1s 29 Cette approche hybride permet de tirer parti des forces de différentes techniques pour résoudre efficacement
+11.1s 30 une large gamme de puzzles dans la compétition ARC Prize 2025.
+14.1s 31 /usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+14.1s 32 warn(
+14.1s 33 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+14.5s 34 [NbConvertApp] Writing 43255 bytes to __notebook__.ipynb
+16.1s 35 /usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+16.1s 36 warn(
+16.2s 37 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+17.2s 38 [NbConvertApp] Writing 387856 bytes to __results__.html

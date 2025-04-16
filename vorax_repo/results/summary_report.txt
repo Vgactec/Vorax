@@ -1,0 +1,65 @@
+KAGGLE API TEST SUMMARY REPORT
+================================================================================
+
+Generated on: 2025-04-16 12:24:00
+
+SUMMARY STATISTICS
+--------------------------------------------------------------------------------
+Total commands tested: 24
+Successful commands: 19
+Failed commands: 5
+Success rate: 79.17%
+
+RESULTS BY CATEGORY
+--------------------------------------------------------------------------------
+Category: competitions
+  Commands tested: 6
+  Successful: 4
+  Failed: 2
+  Success rate: 66.67%
+
+Category: datasets
+  Commands tested: 7
+  Successful: 5
+  Failed: 2
+  Success rate: 71.43%
+
+Category: kernels
+  Commands tested: 6
+  Successful: 6
+  Failed: 0
+  Success rate: 100.00%
+
+Category: config
+  Commands tested: 3
+  Successful: 3
+  Failed: 0
+  Success rate: 100.00%
+
+Category: models
+  Commands tested: 2
+  Successful: 1
+  Failed: 1
+  Success rate: 50.00%
+
+FAILED COMMANDS
+--------------------------------------------------------------------------------
+Command: kaggle competitions submissions
+Error: 
+
+Command: kaggle competitions leaderboard
+Error: 
+
+Command: kaggle datasets files
+Error: 
+
+Command: kaggle datasets download
+Error: 
+
+Command: kaggle models instances
+Error: usage: kaggle models instances [-h]
+                               {versions,get,files,init,create,delete,update}
+                               ...
+kaggle models instances: error: the following arguments are required: command
+
+

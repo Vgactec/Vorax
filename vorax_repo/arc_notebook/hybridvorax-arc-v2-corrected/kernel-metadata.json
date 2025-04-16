@@ -1,0 +1,15 @@
+{
+  "id": "ndarray2000/hybridvoraxmodelv2-arc-prize-2025-corrected",
+  "title": "HybridVoraxModelV2 ARC Prize 2025 Corrected",
+  "code_file": "kernel.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

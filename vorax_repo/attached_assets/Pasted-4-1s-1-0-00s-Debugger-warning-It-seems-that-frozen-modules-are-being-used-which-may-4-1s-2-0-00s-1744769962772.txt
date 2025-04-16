@@ -1,0 +1,103 @@
+4.1s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+4.1s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+4.1s 3 0.00s - to python to disable frozen modules.
+4.1s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+5.0s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+5.0s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+5.0s 7 0.00s - to python to disable frozen modules.
+5.0s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.0s 9 Exécution dans l'environnement Kaggle: True
+8.0s 10 Chemin des données: /kaggle/input/arc-prize-2025
+8.0s 11 Dossier de sortie: /kaggle/working
+8.0s 12 
+8.0s 13 Fichiers disponibles:
+8.0s 14 - arc-agi_training_solutions.json
+8.0s 15 - arc-agi_evaluation_solutions.json
+8.0s 16 - arc-agi_evaluation_challenges.json
+8.0s 17 - sample_submission.json
+8.0s 18 - arc-agi_training_challenges.json
+8.0s 19 - arc-agi_test_challenges.json
+8.3s 20 Chargement des données...
+8.3s 21 Chargé 1000 puzzles d'entraînement
+8.5s 22 Chargé 120 puzzles d'évaluation
+8.5s 23 Exemple de soumission chargé avec 240 entrées
+8.5s 24 
+8.5s 25 Exemple de puzzle d'entraînement (ID: 00576224)
+8.5s 26 Nombre d'exemples d'entraînement: 2
+8.5s 27 Dimensions des entrées: [(2, 2), (2, 2)]
+8.5s 28 Dimensions des sorties: [(6, 6), (6, 6)]
+8.5s 29 Dimensions constantes: True
+8.5s 30 Valeurs dans les entrées: [3, 4, 6, 7, 8, 9]
+8.5s 31 Valeurs dans les sorties: [3, 4, 6, 7, 8, 9]
+8.5s 32 
+8.5s 33 Exemple d'entraînement 1:
+9.2s 34 
+9.2s 35 Aucune entrée de test disponible.
+9.2s 36 
+9.2s 37 Exemple de puzzle d'évaluation (ID: 0934a4d8)
+9.2s 38 Nombre d'exemples d'entraînement: 4
+9.2s 39 Dimensions des entrées: [(30, 30), (30, 30), (30, 30), (30, 30)]
+9.2s 40 Dimensions des sorties: [(9, 4), (4, 5), (3, 7), (4, 4)]
+9.2s 41 Dimensions constantes: False
+9.2s 42 Valeurs dans les entrées: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+9.2s 43 Valeurs dans les sorties: [1, 2, 3, 4, 5, 6, 7, 9]
+9.2s 44 Valeurs supprimées: [8]
+9.2s 45 
+9.2s 46 Exemple d'entraînement 1:
+9.4s 47 
+9.4s 48 Aucune entrée de test disponible.
+9.6s 49 Apprentissage sur 1000 puzzles...
+10.3s 50 Traité 100/100 puzzles (100.0%) en 0.7s
+10.3s 51 Apprentissage terminé en 0.7s. 0 types de puzzles identifiés.
+10.3s 52 
+10.3s 53 Statistiques d'apprentissage:
+10.3s 54 - 0 puzzles traités
+10.3s 55 - 0 types de puzzles identifiés
+10.3s 56 
+10.3s 57 Types de puzzles les plus courants:
+10.3s 58 
+10.3s 59 Transformations les plus efficaces:
+10.3s 60 
+10.3s 61 Test du learner sur le puzzle d'évaluation 0934a4d8:
+10.3s 62 Transformation recommandée: identity (confiance: 0.10, source: default)
+10.5s 63 
+10.5s 64 Test du solveur amélioré sur le puzzle 00576224:
+10.5s 65 Solution trouvée:
+11.0s 66 
+11.0s 67 Génération de la soumission...
+11.0s 68 Traitement de 120 puzzles d'évaluation...
+11.0s 69 Puzzle 0934a4d8 (size_change) résolu
+11.0s 70 Puzzle 135a2760 (unknown) résolu
+11.0s 71 Puzzle 136b0064 (size_change) résolu
+11.0s 72 Puzzle 13e47133 (unknown) résolu
+11.0s 73 Puzzle 142ca369 (unknown) résolu
+11.0s 74 Puzzle 16b78196 (pattern_manipulation) résolu
+11.0s 75 Puzzle 16de56c4 (value_removal) résolu
+11.0s 76 Puzzle 1818057f (value_creation) résolu
+11.0s 77 Puzzle 195c6913 (unknown) résolu
+11.0s 78 Puzzle 1ae2feb7 (unknown) résolu
+11.0s 79 ... et 110 puzzles supplémentaires ...
+11.2s 80 Progression: 20/120 puzzles (16.7%) en 0.3s
+11.2s 81 Progression: 40/120 puzzles (33.3%) en 0.5s
+11.6s 82 Progression: 60/120 puzzles (50.0%) en 0.7s
+11.9s 83 Progression: 80/120 puzzles (66.7%) en 1.0s
+12.2s 84 Progression: 100/120 puzzles (83.3%) en 1.2s
+12.3s 85 Progression: 120/120 puzzles (100.0%) en 1.5s
+12.3s 86 
+12.3s 87 Bilan: 120/120 puzzles résolus (100.0%) en 1.5s
+12.3s 88 
+12.3s 89 Soumission enregistrée dans /kaggle/working/submission.json avec 120 solutions
+14.9s 90 /usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+14.9s 91 warn(
+15.0s 92 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+15.4s 93 [NbConvertApp] Writing 158347 bytes to __notebook__.ipynb
+17.0s 94 /usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+17.0s 95 warn(
+17.0s 96 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+18.1s 97 [NbConvertApp] Support files will be in __results___files/
+18.1s 98 [NbConvertApp] Making directory __results___files
+18.1s 99 [NbConvertApp] Making directory __results___files
+18.1s 100 [NbConvertApp] Making directory __results___files
+18.1s 101 [NbConvertApp] Making directory __results___files
+18.1s 102 [NbConvertApp] Making directory __results___files
+18.1s 103 [NbConvertApp] Writing 469979 bytes to __results__.html
