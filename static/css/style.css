@@ -1,0 +1,96 @@
+/* Styles généraux */
+body {
+    background-color: #f8f9fc;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Cartes */
+.card {
+    border-radius: 0.35rem;
+    border: none;
+}
+
+.card-header {
+    border-top-left-radius: 0.35rem !important;
+    border-top-right-radius: 0.35rem !important;
+}
+
+/* Boutons */
+.btn {
+    border-radius: 0.35rem;
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2653d4;
+}
+
+/* Containers pour les graphiques */
+.file-types-chart-container, 
+.components-chart-container {
+    position: relative;
+    height: 250px;
+    margin-top: 1rem;
+}
+
+/* Stylisation des listes */
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+.list-group-item:first-child {
+    border-top: none;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+/* Stylisation du résumé */
+.summary {
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+/* Styling pour les éléments Feather icons */
+[data-feather] {
+    width: 18px;
+    height: 18px;
+    vertical-align: text-bottom;
+    margin-right: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .file-types-chart-container, 
+    .components-chart-container {
+        height: 200px;
+    }
+}
+
+/* Progress bars */
+.progress-bar {
+    font-weight: 600;
+}
+
+/* Table styling */
+.table th {
+    font-weight: 600;
+    background-color: #f8f9fc;
+}
+
+/* Card header styling */
+.card-header h5 {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.alert-heading {
+    font-weight: 600;
+}

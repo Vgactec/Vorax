@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats d'analyse - Projet Vorax</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h1 class="h3 mb-0">Analyse du Projet Vorax</h1>
+                        <a href="{{ url_for('index') }}" class="btn btn-outline-light">
+                            <i data-feather="home"></i> Accueil
+                        </a>
+                    </div>
+                    
+                    <div class="card-body">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    <div class="alert alert-{{ category if category != 'error' else 'danger' }}">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        
+                        <div class="progress mb-4" style="height: 30px;">
+                            <div class="progress-bar bg-success" role="progressbar" 
+                                 style="width: {{ result.completion_percentage }}%;" 
+                                 aria-valuenow="{{ result.completion_percentage }}" 
+                                 aria-valuemin="0" aria-valuemax="100">
+                                {{ result.completion_percentage }}%
+                            </div>
+                        </div>
+                        
+                        <div class="alert alert-info">
+                            <h4 class="alert-heading">État global du projet</h4>
+                            <p>Le projet Vorax est complété à <strong>{{ result.completion_percentage }}%</strong> selon notre analyse.</p>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-header bg-light">
+                                        <h5 class="mb-0">Statistiques des fichiers</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Fichiers totaux
+                                                <span class="badge bg-primary rounded-pill">{{ result.file_stats.total_files }}</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Lignes de code
+                                                <span class="badge bg-primary rounded-pill">{{ result.file_stats.code_lines }}</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Répertoires
+                                                <span class="badge bg-primary rounded-pill">{{ result.file_stats.directories }}</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Fichiers vides
+                                                <span class="badge bg-warning rounded-pill">{{ result.file_stats.empty_files }}</span>
+                                            </li>
+                                        </ul>
+                                        
+                                        <h6 class="mt-3">Types de fichiers</h6>
+                                        <div class="file-types-chart-container">
+                                            <canvas id="fileTypesChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-header bg-light">
+                                        <h5 class="mb-0">Historique Git</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Commits
+                                                <span class="badge bg-success rounded-pill">{{ result.git_stats.commit_count }}</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Contributeurs
+                                                <span class="badge bg-success rounded-pill">{{ result.git_stats.authors|length }}</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Jours d'activité
+                                                <span class="badge bg-success rounded-pill">{{ result.git_stats.active_days }}</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Branches
+                                                <span class="badge bg-success rounded-pill">{{ result.git_stats.branch_count }}</span>
+                                            </li>
+                                        </ul>
+                                        
+                                        <div class="mt-3">
+                                            <p><strong>Premier commit:</strong> {{ result.git_stats.first_commit_date or 'Inconnu' }}</p>
+                                            <p><strong>Dernier commit:</strong> {{ result.git_stats.last_commit_date or 'Inconnu' }}</p>
+                                        </div>
+                                        
+                                        {% if result.git_stats.authors %}
+                                        <h6 class="mt-3">Contributeurs</h6>
+                                        <ul class="list-group">
+                                            {% for author in result.git_stats.authors[:5] %}
+                                            <li class="list-group-item">{{ author }}</li>
+                                            {% endfor %}
+                                            {% if result.git_stats.authors|length > 5 %}
+                                            <li class="list-group-item text-muted">Et {{ result.git_stats.authors|length - 5 }} autres...</li>
+                                            {% endif %}
+                                        </ul>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card mb-4">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0">Composants du projet</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="components-chart-container mb-3">
+                                            <canvas id="componentsChart"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Composant</th>
+                                                        <th>État</th>
+                                                        <th>Complété</th>
+                                                        <th>Fichiers</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for name, data in result.components.items() %}
+                                                    <tr>
+                                                        <td>{{ name|capitalize }}</td>
+                                                        <td>{{ "Présent" if data.exists else "Absent" }}</td>
+                                                        <td>
+                                                            {% if data.exists %}
+                                                            <div class="progress" style="height: 15px;">
+                                                                <div class="progress-bar {{ 'bg-danger' if data.completion < 30 else 'bg-warning' if data.completion < 70 else 'bg-success' }}" 
+                                                                     role="progressbar" style="width: {{ data.completion }}%;" 
+                                                                     aria-valuenow="{{ data.completion }}" aria-valuemin="0" aria-valuemax="100">
+                                                                    {{ data.completion }}%
+                                                                </div>
+                                                            </div>
+                                                            {% else %}
+                                                            -
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>{{ data.files|length if data.exists else 0 }}</td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card mb-4">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0">Résumé de l'analyse</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="summary">
+                                    {{ result.summary|replace('\n', '<br>')|safe }}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {% if result.recommendations %}
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0">Recommandations</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    {% for recommendation in result.recommendations %}
+                                    <li class="list-group-item">
+                                        <i data-feather="check" class="text-success"></i> {{ recommendation }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="card-footer text-center">
+                        <p class="text-muted mb-0">Cette analyse a été générée automatiquement et représente une estimation basée sur le code source actuel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            feather.replace();
+            
+            // Graphique des types de fichiers
+            const fileTypesCtx = document.getElementById('fileTypesChart').getContext('2d');
+            const fileTypes = {{ result.file_stats.file_types|tojson }};
+            
+            // Préparation des données pour le graphique
+            const fileTypeLabels = Object.keys(fileTypes).slice(0, 7); // Limiter à 7 types les plus courants
+            const fileTypeData = fileTypeLabels.map(type => fileTypes[type]);
+            
+            // Couleurs pour le graphique
+            const fileTypeColors = [
+                '#4e73df', '#1cc88a', '#36b9cc', '#f6c23e', '#e74a3b', '#5a5c69', '#858796'
+            ];
+            
+            new Chart(fileTypesCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: fileTypeLabels,
+                    datasets: [{
+                        data: fileTypeData,
+                        backgroundColor: fileTypeColors,
+                        hoverBackgroundColor: fileTypeColors.map(c => c + 'dd'),
+                        hoverBorderColor: "rgba(234, 236, 244, 1)",
+                    }],
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    tooltips: {
+                        backgroundColor: "rgb(255,255,255)",
+                        bodyFontColor: "#858796",
+                        borderColor: '#dddfeb',
+                        borderWidth: 1,
+                        xPadding: 15,
+                        yPadding: 15,
+                        displayColors: false,
+                        caretPadding: 10,
+                    },
+                    legend: {
+                        display: true,
+                        position: 'bottom'
+                    },
+                    cutoutPercentage: 70,
+                },
+            });
+            
+            // Graphique des composants
+            const componentsCtx = document.getElementById('componentsChart').getContext('2d');
+            const components = {{ result.components|tojson }};
+            
+            // Préparation des données pour le graphique
+            const componentNames = Object.keys(components);
+            const componentCompletions = componentNames.map(name => 
+                components[name].exists ? components[name].completion : 0
+            );
+            
+            new Chart(componentsCtx, {
+                type: 'radar',
+                data: {
+                    labels: componentNames.map(name => name.charAt(0).toUpperCase() + name.slice(1)),
+                    datasets: [{
+                        label: 'Taux de complétion',
+                        data: componentCompletions,
+                        backgroundColor: "rgba(78, 115, 223, 0.2)",
+                        borderColor: "rgba(78, 115, 223, 1)",
+                        pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                    }],
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scale: {
+                        ticks: {
+                            beginAtZero: true,
+                            max: 100,
+                            stepSize: 20
+                        }
+                    },
+                    tooltips: {
+                        callbacks: {
+                            label: function(tooltipItem, data) {
+                                return data.datasets[tooltipItem.datasetIndex].label + ': ' + 
+                                       tooltipItem.yLabel + '%';
+                            }
+                        }
+                    }
+                },
+            });
+        });
+    </script>
+</body>
+</html>
