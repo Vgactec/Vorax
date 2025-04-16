@@ -1,0 +1,51 @@
+[
+  {
+    "command": "kaggle config view",
+    "success": true,
+    "execution_time": 0.42,
+    "stdout": "Configuration values from /home/runner/.kaggle\n- username: ndarray2000\n- path: None\n- proxy: None\n- competition: None\n",
+    "stderr": ""
+  },
+  {
+    "command": "kaggle --version",
+    "success": true,
+    "execution_time": 0.42,
+    "stdout": "Kaggle API 1.7.4.2\n",
+    "stderr": ""
+  },
+  {
+    "command": "kaggle competitions list -s arc",
+    "success": true,
+    "execution_time": 0.66,
+    "stdout": "ref                                                 deadline             category       reward  teamCount  userHasEntered  \n--------------------------------------------------  -------------------  --------  -----------  ---------  --------------  \nhttps://www.kaggle.com/competitions/arc-prize-2025  2025-11-03 23:59:00  Featured  725,000 Usd        263            True  \n",
+    "stderr": ""
+  },
+  {
+    "command": "kaggle competitions files arc-prize-2025",
+    "success": true,
+    "execution_time": 0.98,
+    "stdout": "name                                      size  creationDate                \n----------------------------------  ----------  --------------------------  \narc-agi_evaluation_challenges.json      984679  2025-04-11 20:46:02.306000  \narc-agi_evaluation_solutions.json       223838  2025-04-11 20:46:02.306000  \narc-agi_test_challenges.json           1015295  2025-04-11 20:46:02.306000  \narc-agi_training_challenges.json       4010050  2025-04-11 20:46:02.306000  \narc-agi_training_solutions.json         658743  2025-04-11 20:46:02.306000  \nsample_submission.json                   19936  2025-04-11 20:46:02.306000  \n",
+    "stderr": ""
+  },
+  {
+    "command": "kaggle competitions download arc-prize-2025 -f sample_submission.json -p ./download_test",
+    "success": true,
+    "execution_time": 0.97,
+    "stdout": "sample_submission.json: Skipping, found more recently modified local copy (use --force to force download)\n",
+    "stderr": ""
+  },
+  {
+    "command": "kaggle datasets list -s titanic",
+    "success": true,
+    "execution_time": 0.69,
+    "stdout": "ref                                  title                                                size  lastUpdated                 downloadCount  voteCount  usabilityRating  \n-----------------------------------  ---------------------------------------------  ----------  --------------------------  -------------  ---------  ---------------  \nheptapod/titanic                     Titanic                                             11090  2017-05-16 08:14:22.210000         107739       1565  0.7058824        \nbrendan45774/test-file               Titanic dataset                                     11514  2021-12-02 16:11:42.367000         168118       1330  1.0              \nyasserh/titanic-dataset              Titanic Dataset                                     22564  2021-12-24 14:53:06.913000         129089        427  1.0              \nazeembootwala/titanic                Titanic                                             12406  2017-06-05 12:14:37.477000          23455        197  0.8235294        \nrahulsah06/titanic                   Titanic                                             34877  2019-09-16 14:43:23.910000          11615        121  0.6764706        \nshubhamgupta012/titanic-dataset      Titanic Dataset                                      6833  2023-06-18 07:52:20.030000           5936         57  1.0              \nsakshisatre/titanic-dataset          Titanic Dataset                                     60609  2024-04-30 19:20:37.987000           3812         65  1.0              \nwaqi786/titanic-dataset              Titanic Dataset                                     41548  2024-07-25 08:23:03.090000           2920         35  1.0              \nfossouodonald/titaniccsv             Titanic csv                                          1030  2016-11-07 09:44:58.073000          19485        133  0.5882353        \nzain280/titanic-data-set             Titanic Data set                                    22544  2024-02-28 14:04:13.953000           3587         63  1.0              \nprkukunoor/TitanicDataset            Titanic                                            138274  2017-01-03 22:01:13.023000           5895         35  0.5882353        \nibrahimelsayed182/titanic-dataset    Titanic dataset                                      5731  2022-01-27 07:41:54.683000           5318         35  1.0              \nhesh97/titanicdataset-traincsv       Titanic-Dataset (train.csv)                         22544  2018-02-02 04:51:06.950000         103289        554  0.4117647        \npavlofesenko/titanic-extended        Titanic extended dataset (Kaggle + Wikipedia)      137471  2019-03-06 09:53:24.747000          14720        171  0.9411765        \njamesleslie/titanic-cleaned-data     Titanic: cleaned data                               36367  2018-11-21 11:50:18.683000           9478         70  0.7647059        \nbroaniki/titanic                     titanic                                            733956  2018-01-30 04:08:45.227000           8970        133  0.1764706        \nmahmoudshogaa/titanic-dataset        titanic_dataset                                     22491  2023-11-24 14:19:44.907000           2365         62  1.0              \nkittisaks/testtitanic                test titanic                                        22558  2017-03-13 15:13:12.767000           2206         35  0.64705884       \nashishkumarjayswal/titanic-datasets  Titanic Survival Datasets                           11516  2022-05-25 04:23:42.153000           3919         45  0.7647059        \nvinicius150987/titanic3              The Complete Titanic Dataset                       283956  2020-01-04 18:24:11.277000          25398        118  0.64705884       \n",
+    "stderr": ""
+  },
+  {
+    "command": "kaggle kernels list --mine",
+    "success": true,
+    "execution_time": 0.62,
+    "stdout": "ref                                                          title                                               author       lastRunTime                 totalVotes  \n-----------------------------------------------------------  --------------------------------------------------  -----------  --------------------------  ----------  \nndarray2000/hybridvoraxmodelv3-arc-prize-2025-ultra-optimis  HybridVoraxModelV3 ARC Prize 2025 (ULTRA-OPTIMIS\u00c9)  ndarray2000  2025-04-16 12:24:03                  1  \nndarray2000/hybridvoraxmodelv2-arc-prize-2025-corrected      HybridVoraxModelV2 ARC Prize 2025 Corrected         ndarray2000  2025-04-16 00:50:10.977000           1  \nndarray2000/notebook                                         notebook                                            ndarray2000  2025-04-15 03:15:20.910000           0  \nndarray2000/exercise-functions                               Exercise: Functions                                 ndarray2000  2025-04-10 18:16:50.837000           0  \nndarray2000/exercise-arithmetic-and-variables                Exercise: Arithmetic and Variables                  ndarray2000  2025-04-09 16:26:06.593000           0  \nndarray2000/arc-prize-2025-submission-ndarray                arc_prize_2025_submission_ndarray                   ndarray2000  2025-04-03 22:43:15.803000           0  \nndarray2000/test-notebook                                    Test Notebook                                       ndarray2000  2025-04-03 22:42:54.790000           0  \nndarray2000/notebooke24efed78a96                             notebooke24efed78a96                                ndarray2000  2025-04-03 22:21:59.690000           0  \nndarray2000/notebook829e8056f1df                             notebook829e8056f1df                                ndarray2000  2025-04-03 22:07:56.270000           0  \nndarray2000/notebookf0f2f6749f48                             notebookf0f2f6749f48                                ndarray2000  2025-04-03 22:07:39.100000           0  \nndarray2000/ndarray-arc-prize-2025-submission                NDARRAY ARC Prize 2025 Submission                   ndarray2000  2025-04-03 21:22:33.727000           0  \n",
+    "stderr": ""
+  }
+]

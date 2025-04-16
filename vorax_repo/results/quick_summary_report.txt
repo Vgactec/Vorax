@@ -1,0 +1,48 @@
+RAPPORT DE TEST RAPIDE DE L'API KAGGLE
+================================================================================
+
+Généré le: 2025-04-16 15:19:22
+
+Tests effectués: 7
+Tests réussis: 7
+Tests échoués: 0
+Taux de réussite: 100.00%
+
+DÉTAILS DES TESTS
+--------------------------------------------------------------------------------
+
+Test #1: kaggle config view
+Statut: Réussi
+Temps d'exécution: 0.42 secondes
+--------------------------------------------------------------------------------
+
+Test #2: kaggle --version
+Statut: Réussi
+Temps d'exécution: 0.42 secondes
+--------------------------------------------------------------------------------
+
+Test #3: kaggle competitions list -s arc
+Statut: Réussi
+Temps d'exécution: 0.66 secondes
+--------------------------------------------------------------------------------
+
+Test #4: kaggle competitions files arc-prize-2025
+Statut: Réussi
+Temps d'exécution: 0.98 secondes
+--------------------------------------------------------------------------------
+
+Test #5: kaggle competitions download arc-prize-2025 -f sample_submission.json -p ./download_test
+Statut: Réussi
+Temps d'exécution: 0.97 secondes
+--------------------------------------------------------------------------------
+
+Test #6: kaggle datasets list -s titanic
+Statut: Réussi
+Temps d'exécution: 0.69 secondes
+--------------------------------------------------------------------------------
+
+Test #7: kaggle kernels list --mine
+Statut: Réussi
+Temps d'exécution: 0.62 secondes
+--------------------------------------------------------------------------------
+
