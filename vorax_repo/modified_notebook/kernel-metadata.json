@@ -5,10 +5,10 @@
   "code_file": "hybridvoraxmodelv4-arc-prize-2025-corrected.ipynb",
   "language": "python",
   "kernel_type": "notebook",
-  "is_private": true,
+  "is_private": false,
   "enable_gpu": true,
   "enable_internet": true,
-  "dataset_sources": [],
-  "competition_sources": ["abstractreasoning"],
-  "kernel_sources": []
+  "dataset_sources": ["kaggle/abstraction-and-reasoning-prize"],
+  "competition_sources": ["arc-prize-2025"],
+  "keywords": ["deep learning", "optimization", "hybrid model", "v4"]
 }
